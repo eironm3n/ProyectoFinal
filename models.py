@@ -114,15 +114,6 @@ class Model:
             self.tree.insert("", 0, text=resultado[0], values=(
                 resultado[1], resultado[2], resultado[3]))
 
-    # def seleccionar_usando_click(self,):
-    #     """Selecciona un registro de la tabla usando el click del mouse"""
-    #     self.limpiar_campos()
-    #     item = self.tree.selection()[0]
-    #     self.var_id.set(self.tree.item(item, "text"))
-    #     self.var_producto.set(self.tree.item(item, "values")[0])
-    #     self.var_cantidad.set(self.tree.item(item, "values")[1])
-    #     self.var_precio.set(self.tree.item(item, "values")[2])
-
     def seleccionar_usando_click(self, event):
         """Selecciona un registro de la tabla usando el doble click del mouse"""
         self.limpiar_campos()
@@ -137,7 +128,8 @@ class Model:
         mi_conexion = sqlite3.connect("base.db")
         db_file = "base.db"
         if os.path.exists(db_file):
-            if messagebox.askyesno(message="Los datos se perderán definitivamente, ¿Desea continuar?", title="ADVERTENCIA"):
+            if messagebox.askyesno(message="Los datos se perderán definitivamente, ¿Desea continuar?",
+                                   title="ADVERTENCIA"):
                 mi_conexion.close()
                 os.remove(db_file)
                 messagebox.showinfo(
