@@ -1,64 +1,150 @@
-# Proyecto Final: CRUD con Arquitectura MVC en Python
+# ProyectoFinal - Aplicación CRUD con Patrón MVC
 
-Este proyecto es una aplicación de consola simple que implementa operaciones CRUD (Crear, Leer, Actualizar, Eliminar) utilizando el patrón de diseño Modelo-Vista-Controlador (MVC). Su propósito principal es servir como un ejemplo práctico y educativo para entender la separación de responsabilidades en el desarrollo de software.
+Una aplicación de consola educativa que demuestra la implementación del patrón Modelo-Vista-Controlador (MVC) con operaciones CRUD en Python.
 
-### 🎯 Propósito del Proyecto
+## 🎯 Objetivo
 
-El objetivo de este repositorio es demostrar de forma clara y minimalista los siguientes conceptos fundamentales:
-Arquitectura Limpia: Cómo estructurar el código para que sea mantenible, escalable y fácil de entender.
-Interacción con Bases de Datos: Uso de un ORM (Peewee) para manipular datos sin escribir consultas SQL directamente.
-Buenas Prácticas: Gestión correcta de dependencias a través de entornos virtuales y un archivo requirements.txt bien definido.
+Este proyecto sirve como ejemplo práctico para entender la separación de responsabilidades en el desarrollo de software, demostrando conceptos fundamentales como arquitectura limpia, interacción con bases de datos y buenas prácticas de desarrollo.
 
-### ✨ Conceptos Clave Demostrados
+## 🏗️ Arquitectura MVC
 
-Separación de Responsabilidades (MVC):
-Modelo (models.py): Gestiona los datos y la lógica de negocio. Es el único que interactúa con la base de datos.
-Vista (view.py): Se encarga exclusivamente de presentar los datos al usuario y capturar sus entradas. No contiene ninguna lógica.
-Controlador (controller.py): Actúa como el intermediario, procesando las entradas del usuario, interactuando con el Modelo y seleccionando la Vista a mostrar.
-ORM (Object-Relational Mapping): La librería Peewee mapea las tablas de la base de datos a clases de Python, permitiendo una interacción más intuitiva y segura con los datos.
-Gestión de Dependencias: El uso de requirements.txt asegura que cualquier desarrollador pueda replicar el entorno de ejecución exacto, mientras que el .gitignore previene que archivos innecesarios (como el entorno virtual) sean subidos al repositorio.
-### 🛠️ Stack Tecnológico
-* Lenguaje: Python 3
-* Base de Datos: SQLite
-* ORM: Peewee
+### Modelo (`models.py`)
+- **Responsabilidad**: Gestiona los datos y la lógica de negocio
+- **Función**: Único punto de interacción con la base de datos
+- **Implementación**: Utiliza ORM Peewee para mapear tablas a clases Python
 
-### 🚀 Puesta en Marcha
-Sigue estos pasos para ejecutar el proyecto localmente. Es crucial utilizar un entorno virtual para mantener las dependencias aisladas.
-1. Clonar el Repositorio
-code
-Bash
+### Vista (`view.py`) 
+- **Responsabilidad**: Presentación de datos y captura de entradas del usuario
+- **Función**: Interfaz de usuario sin lógica de negocio
+- **Implementación**: Funciones de entrada y salida por consola
+
+### Controlador (`controller.py`)
+- **Responsabilidad**: Intermediario entre Modelo y Vista
+- **Función**: Procesa entradas, ejecuta lógica y selecciona vistas
+- **Implementación**: Punto de entrada de la aplicación
+
+## 🛠️ Tecnologías
+
+- **Lenguaje**: Python 3
+- **Base de Datos**: SQLite
+- **ORM**: Peewee
+- **Gestión de Dependencias**: pip + requirements.txt
+
+## 🚀 Instalación y Ejecución
+
+### Prerrequisitos
+- Python 3.7 o superior
+- pip (gestor de paquetes de Python)
+
+### Pasos de Instalación
+
+1. **Clonar el repositorio**
+```bash
 git clone https://github.com/eironm3n/ProyectoFinal.git
 cd ProyectoFinal
-2. Crear y Activar el Entorno Virtual
-Este comando crea una carpeta .venv en tu proyecto que contendrá las librerías necesarias.
-code
-Bash
-# Crear el entorno virtual
+```
+
+2. **Crear entorno virtual**
+```bash
 python -m venv .venv
+```
 
-# Activar el entorno (los comandos varían según tu sistema operativo)
-# Windows:
-.\.venv\Scripts\activate
+3. **Activar entorno virtual**
 
-# macOS / Linux:
+**Windows:**
+```bash
+.venv\Scripts\activate
+```
+
+**macOS/Linux:**
+```bash
 source .venv/bin/activate
-Notarás que el entorno está activo porque (.venv) aparecerá al inicio de la línea de tu terminal.
-3. Instalar Dependencias
-Este comando lee el archivo requirements.txt e instala las versiones exactas de las librerías necesarias dentro de tu entorno virtual.
-code
-Bash
+```
+
+> 💡 **Nota**: Verás `(.venv)` al inicio de tu terminal cuando esté activo
+
+4. **Instalar dependencias**
+```bash
 pip install -r requirements.txt
-4. Ejecutar la Aplicación
-Con el entorno virtual activado y las dependencias instaladas, ejecuta el controlador, que es el punto de entrada de la aplicación.
-code
-Bash
+```
+
+5. **Ejecutar la aplicación**
+```bash
 python controller.py
-La aplicación se iniciará en tu terminal y te mostrará un menú de opciones para interactuar con ella.
-📂 Estructura del Repositorio
-Archivo	Componente	Descripción
-controller.py	Controlador	Orquesta la aplicación, maneja la lógica de flujo y conecta el Modelo con la Vista.
-models.py	Modelo	Define la estructura de la base de datos y los métodos para interactuar con los datos.
-view.py	Vista	Contiene todas las funciones que imprimen información en pantalla y reciben datos del usuario.
-base.db	Base de Datos	Archivo de SQLite que almacena la información.
-requirements.txt	Dependencias	Lista las librerías de Python necesarias para que el proyecto funcione.
-.gitignore	Config. Git	Especifica los archivos y directorios que Git debe ignorar.
+```
+
+## 📂 Estructura del Proyecto
+
+```
+ProyectoFinal/
+├── controller.py       # Controlador principal - Punto de entrada
+├── models.py          # Modelos de datos y lógica de negocio
+├── view.py            # Interfaz de usuario y presentación
+├── base.db            # Base de datos SQLite (generada automáticamente)
+├── requirements.txt   # Dependencias del proyecto
+├── .gitignore        # Archivos ignorados por Git
+├── .venv/            # Entorno virtual (ignorado por Git)
+└── README.md         # Documentación del proyecto
+```
+
+## 📋 Funcionalidades
+
+- ✅ **Crear** registros en la base de datos
+- ✅ **Leer** y mostrar información almacenada
+- ✅ **Actualizar** registros existentes
+- ✅ **Eliminar** registros de la base de datos
+
+## 🎓 Conceptos Demostrados
+
+### Arquitectura Limpia
+- Separación clara de responsabilidades
+- Código mantenible y escalable
+- Estructura fácil de entender y modificar
+
+### ORM (Object-Relational Mapping)
+- Mapeo automático de tablas a clases Python
+- Interacción intuitiva con la base de datos
+- Abstracción de consultas SQL
+
+### Buenas Prácticas
+- Uso de entornos virtuales
+- Gestión de dependencias con `requirements.txt`
+- Configuración correcta de `.gitignore`
+
+## 🤝 Contribuir
+
+Este es un proyecto educativo. Si deseas contribuir:
+
+1. Fork el repositorio
+2. Crea una rama para tu feature (`git checkout -b feature/AmazingFeature`)
+3. Commit tus cambios (`git commit -m 'Add some AmazingFeature'`)
+4. Push a la rama (`git push origin feature/AmazingFeature`)
+5. Abre un Pull Request
+
+## 📝 Notas de Desarrollo
+
+- La base de datos `base.db` se crea automáticamente al ejecutar la aplicación por primera vez
+- El entorno virtual `.venv` está incluido en `.gitignore` para evitar conflictos
+- Las dependencias están fijadas a versiones específicas para garantizar consistencia
+
+## 🆘 Resolución de Problemas
+
+### La aplicación no inicia
+- Verifica que el entorno virtual esté activado
+- Asegúrate de haber instalado las dependencias: `pip install -r requirements.txt`
+
+### Error de permisos en la base de datos
+- Verifica que tengas permisos de escritura en el directorio del proyecto
+- En sistemas Unix, puedes usar: `chmod 755 base.db`
+
+## 📄 Licencia
+
+Este proyecto es de código abierto y está disponible bajo la [MIT License](LICENSE).
+
+## 👤 Autor
+
+**eironm3n** - [GitHub](https://github.com/eironm3n)
+
+---
+
+⭐ Si este proyecto te resultó útil, ¡no dudes en darle una estrella!
