@@ -1,53 +1,58 @@
-Proyecto Final - Demo de Arquitectura MVC en Python
-Este repositorio contiene un proyecto simple en Python que demuestra la implementación del patrón de diseño Modelo-Vista-Controlador (MVC). Sí, es un proyecto pequeño, y su objetivo principal es servir como un recurso educativo técnico para entender conceptos clave de la arquitectura de software y las buenas prácticas de desarrollo en Python.
-Objetivos de Aprendizaje
-Al explorar este repositorio, podrás aprender sobre:
-Patrón de Diseño MVC: Comprender cómo separar las responsabilidades de una aplicación en tres componentes interconectados:
-Modelo: La lógica de los datos y las reglas de negocio.
-Vista: La representación de los datos (la interfaz de usuario).
-Controlador: El intermediario que maneja las entradas del usuario y conecta el Modelo y la Vista.
-Manejo de Bases de Datos con un ORM: Se utiliza la librería Peewee como un Mapeador Objeto-Relacional (ORM) para interactuar con una base de datos SQLite de una manera más "Pythónica", sin escribir SQL crudo.
-Gestión de Dependencias Profesional:
-La importancia de usar entornos virtuales (.venv) para aislar las dependencias del proyecto.
-Cómo mantener un archivo requirements.txt limpio y conciso, conteniendo solo las librerías necesarias para que la aplicación funcione, excluyendo herramientas de desarrollo.
-Seguridad en Dependencias: Entender la importancia de mantener las librerías actualizadas para corregir vulnerabilidades de seguridad, tal como lo notifican herramientas como Dependabot de GitHub.
-Stack Tecnológico
+Proyecto Final: CRUD con Arquitectura MVC en Python
+Este proyecto es una aplicación de consola simple que implementa operaciones CRUD (Crear, Leer, Actualizar, Eliminar) utilizando el patrón de diseño Modelo-Vista-Controlador (MVC). Su propósito principal es servir como un ejemplo práctico y educativo para entender la separación de responsabilidades en el desarrollo de software.
+🎯 Propósito del Proyecto
+El objetivo de este repositorio es demostrar de forma clara y minimalista los siguientes conceptos fundamentales:
+Arquitectura Limpia: Cómo estructurar el código para que sea mantenible, escalable y fácil de entender.
+Interacción con Bases de Datos: Uso de un ORM (Peewee) para manipular datos sin escribir consultas SQL directamente.
+Buenas Prácticas: Gestión correcta de dependencias a través de entornos virtuales y un archivo requirements.txt bien definido.
+✨ Conceptos Clave Demostrados
+Separación de Responsabilidades (MVC):
+Modelo (models.py): Gestiona los datos y la lógica de negocio. Es el único que interactúa con la base de datos.
+Vista (view.py): Se encarga exclusivamente de presentar los datos al usuario y capturar sus entradas. No contiene ninguna lógica.
+Controlador (controller.py): Actúa como el intermediario, procesando las entradas del usuario, interactuando con el Modelo y seleccionando la Vista a mostrar.
+ORM (Object-Relational Mapping): La librería Peewee mapea las tablas de la base de datos a clases de Python, permitiendo una interacción más intuitiva y segura con los datos.
+Gestión de Dependencias: El uso de requirements.txt asegura que cualquier desarrollador pueda replicar el entorno de ejecución exacto, mientras que el .gitignore previene que archivos innecesarios (como el entorno virtual) sean subidos al repositorio.
+🛠️ Stack Tecnológico
 Lenguaje: Python 3
-Base de Datos: SQLite (a través del archivo base.db)
+Base de Datos: SQLite
 ORM: Peewee
-Instalación y Puesta en Marcha
-Para ejecutar este proyecto en tu máquina local, sigue estos pasos. Es fundamental crear un entorno virtual para no instalar paquetes en tu sistema global.
-1. Clona el repositorio:
+🚀 Puesta en Marcha
+Sigue estos pasos para ejecutar el proyecto localmente. Es crucial utilizar un entorno virtual para mantener las dependencias aisladas.
+1. Clonar el Repositorio
 code
 Bash
 git clone https://github.com/eironm3n/ProyectoFinal.git
 cd ProyectoFinal
-2. Crea y activa un entorno virtual:```bash
-Crear el entorno (esto crea una carpeta .venv)
-python -m venv .venv
-Activar el entorno
-En Windows:
-..venv\Scripts\activate
-En macOS / Linux:
-source .venv/bin/activate
+2. Crear y Activar el Entorno Virtual
+Este comando crea una carpeta .venv en tu proyecto que contendrá las librerías necesarias.
 code
-Code
-*Sabrás que está activado porque el nombre de tu terminal mostrará `(.venv)` al principio.*
+Bash
+# Crear el entorno virtual
+python -m venv .venv
 
-**3. Instala las dependencias:**
-Con el entorno activado, instala las librerías necesarias desde el archivo `requirements.txt`.
-```bash
+# Activar el entorno (los comandos varían según tu sistema operativo)
+# Windows:
+.\.venv\Scripts\activate
+
+# macOS / Linux:
+source .venv/bin/activate
+Notarás que el entorno está activo porque (.venv) aparecerá al inicio de la línea de tu terminal.
+3. Instalar Dependencias
+Este comando lee el archivo requirements.txt e instala las versiones exactas de las librerías necesarias dentro de tu entorno virtual.
+code
+Bash
 pip install -r requirements.txt
-Uso del Proyecto
-Una vez que las dependencias estén instaladas, puedes ejecutar la aplicación a través del script principal (probablemente el controlador):
+4. Ejecutar la Aplicación
+Con el entorno virtual activado y las dependencias instaladas, ejecuta el controlador, que es el punto de entrada de la aplicación.
 code
 Bash
 python controller.py
-Al ejecutar el script, se iniciará la aplicación en la consola y podrás interactuar con ella a través de las opciones que presente.
-Estructura del Repositorio
-models.py: (Modelo) Define la estructura de la base de datos (tablas y columnas) usando clases de Peewee. Aquí reside toda la lógica de los datos.
-view.py: (Vista) Contiene las funciones responsables de mostrar información al usuario y de recibir las entradas (inputs) del mismo. No contiene lógica de negocio.
-controller.py: (Controlador) Es el cerebro de la aplicación. Orquesta el flujo, recibe peticiones de la Vista, pide datos al Modelo y se los devuelve a la Vista para que los muestre.
-base.db: El archivo de la base de datos SQLite.
-requirements.txt: El listado de las dependencias de Python que necesita el proyecto para funcionar.
-.gitignore: Un archivo que le dice a Git qué archivos y carpetas ignorar (como la carpeta .venv).
+La aplicación se iniciará en tu terminal y te mostrará un menú de opciones para interactuar con ella.
+📂 Estructura del Repositorio
+Archivo	Componente	Descripción
+controller.py	Controlador	Orquesta la aplicación, maneja la lógica de flujo y conecta el Modelo con la Vista.
+models.py	Modelo	Define la estructura de la base de datos y los métodos para interactuar con los datos.
+view.py	Vista	Contiene todas las funciones que imprimen información en pantalla y reciben datos del usuario.
+base.db	Base de Datos	Archivo de SQLite que almacena la información.
+requirements.txt	Dependencias	Lista las librerías de Python necesarias para que el proyecto funcione.
+.gitignore	Config. Git	Especifica los archivos y directorios que Git debe ignorar.
