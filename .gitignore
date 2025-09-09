@@ -1,2 +1,10 @@
-proyectofinalvenv
-__pycache__
+# Entorno virtual
+.venv/
+venv/
+
+# Archivos de caché de Python
+__pycache__/
+*.pyc
+
+# Base de datos local
+*.db
