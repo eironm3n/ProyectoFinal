@@ -77,13 +77,12 @@ python controller.py
 
 ```
 ProyectoFinal/
-├── controller.py       # Controlador principal - Punto de entrada
+├── controller.py      # Controlador principal - Punto de entrada
 ├── models.py          # Modelos de datos y lógica de negocio
 ├── view.py            # Interfaz de usuario y presentación
 ├── base.db            # Base de datos SQLite (generada automáticamente)
 ├── requirements.txt   # Dependencias del proyecto
 ├── .gitignore        # Archivos ignorados por Git
-├── .venv/            # Entorno virtual (ignorado por Git)
 └── README.md         # Documentación del proyecto
 ```
 
@@ -113,13 +112,7 @@ ProyectoFinal/
 
 ## 🤝 Contribuir
 
-Este es un proyecto educativo. Si deseas contribuir:
-
-1. Fork el repositorio
-2. Crea una rama para tu feature (`git checkout -b feature/AmazingFeature`)
-3. Commit tus cambios (`git commit -m 'Add some AmazingFeature'`)
-4. Push a la rama (`git push origin feature/AmazingFeature`)
-5. Abre un Pull Request
+- Gracias a Ariel Caruso y Guido por su apoyo durante este proyecto.
 
 ## 📝 Notas de Desarrollo
 
@@ -136,14 +129,6 @@ Este es un proyecto educativo. Si deseas contribuir:
 ### Error de permisos en la base de datos
 - Verifica que tengas permisos de escritura en el directorio del proyecto
 - En sistemas Unix, puedes usar: `chmod 755 base.db`
-
-## 📄 Licencia
-
-Este proyecto es de código abierto y está disponible bajo la [MIT License](LICENSE).
-
-## 👤 Autor
-
-**eironm3n** - [GitHub](https://github.com/eironm3n)
 
 ---
 
